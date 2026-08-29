@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deskryptor — Hurtowe opisy produktów Allegro SEO</title>
+<meta name="description" content="Deskryptor to mikroagencja generująca hurtowo opisy produktów Allegro zoptymalizowane pod SEO. Dla sprzedawców z branży hydraulicznej, budowlanej i instalacyjnej.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--bg:#0F1115;--surface:#161A21;--surface2:#1C2129;--border:#2A2F38;--text:#E8E6E1;--muted:#8A8F99;--faint:#5A5F68;
+--primary:#FF6B2C;--primary-hover:#E5561A;--accent:#4FC3F7;
+--radius:12px;--radius-sm:8px;
+--font-body:'Plus Jakarta Sans',system-ui,sans-serif;
+}
+html{-webkit-font-size-adjust:none;text-size-adjust:none;-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+body{min-height:100dvh;line-height:1.6;font-family:var(--font-body);font-size:16px;color:var(--text);background:var(--bg)}
+img,picture,video,canvas,svg{display:block;max-width:100%;height:auto}
+a,button,input,textarea,select{font:inherit;color:inherit;transition:all 180ms cubic-bezier(0.16,1,0.3,1)}
+h1,h2,h3{line-height:1.15;text-wrap:balance}
+p,li{text-wrap:pretty;max-width:72ch}
+::selection{background:rgba(255,107,44,0.25)}
+:focus-visible{outline:2px solid var(--primary);outline-offset:3px;border-radius:var(--radius-sm)}
+button{cursor:pointer;background:none;border:none}
+.container{max-width:960px;margin:0 auto;padding:0 24px}
+.section{padding:80px 0}
+.header{position:sticky;top:0;z-index:50;background:rgba(15,17,21,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:var(--text);text-decoration:none}
+.logo svg{width:28px;height:28px}
+.nav-links{display:flex;gap:28px}
+.nav-links a{font-size:14px;color:var(--muted);text-decoration:none;font-weight:500}
+.nav-links a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 20px;border-radius:var(--radius-sm);font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-primary:hover{background:var(--primary-hover)}
+.btn-outline{border:1px solid var(--border);color:var(--text)}
+.btn-outline:hover{border-color:var(--primary);color:var(--primary)}
+@media(max-width:640px){.nav-links{display:none}}
+.hero{padding:100px 0 80px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(255,107,44,0.12),transparent 70%);pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:rgba(255,107,44,0.1);border:1px solid rgba(255,107,44,0.2);border-radius:100px;font-size:13px;font-weight:500;color:var(--primary);margin-bottom:24px}
+.hero h1{font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;margin-bottom:20px}
+.hero h1 span{color:var(--primary)}
+.hero p{font-size:18px;color:var(--muted);margin:0 auto 32px;max-width:600px}
+.hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.hero-stats{display:flex;gap:48px;justify-content:center;margin-top:64px;flex-wrap:wrap}
+.stat{text-align:center}
+.stat-num{font-size:32px;font-weight:800;color:var(--primary)}
+.stat-label{font-size:13px;color:var(--muted);margin-top:4px}
+.section-title{font-size:clamp(24px,4vw,32px);font-weight:700;letter-spacing:-0.01em;margin-bottom:16px;text-align:center}
+.section-sub{text-align:center;color:var(--muted);font-size:17px;margin-bottom:48px;max-width:600px;margin-left:auto;margin-right:auto}
+.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.problem-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center}
+.problem-card .icon{width:48px;height:48px;margin:0 auto 16px;color:var(--primary)}
+.problem-card h3{font-size:18px;font-weight:600;margin-bottom:8px}
+.problem-card p{font-size:15px;color:var(--muted)}
+@media(max-width:768px){.problem-grid{grid-template-columns:1fr}}
+.offer-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:48px}
+.offer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.offer-item{padding:24px;border:1px solid var(--border);border-radius:var(--radius-sm);text-align:center;background:var(--surface2)}
+.offer-item h3{font-size:20px;font-weight:700;color:var(--primary);margin-bottom:4px}
+.offer-item .price{font-size:24px;font-weight:800;margin-bottom:8px}
+.offer-item .per{font-size:13px;color:var(--muted)}
+.offer-item ul{list-style:none;text-align:left;margin-top:16px}
+.offer-item li{font-size:14px;color:var(--muted);padding:4px 0;padding-left:20px;position:relative}
+.offer-item li::before{content:'';position:absolute;left:0;top:12px;width:8px;height:8px;background:var(--primary);border-radius:2px}
+.offer-item.featured{border-color:var(--primary);background:rgba(255,107,44,0.05)}
+@media(max-width:900px){.offer-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.offer-grid{grid-template-columns:1fr}}
+.process-list{display:flex;flex-direction:column;gap:0}
+.process-item{display:flex;gap:24px;padding:24px 0;border-bottom:1px solid var(--border)}
+.process-item:last-child{border-bottom:none}
+.process-num{flex-shrink:0;width:40px;height:40px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px}
+.process-content h3{font-size:18px;font-weight:600;margin-bottom:4px}
+.process-content p{color:var(--muted);font-size:15px}
+.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.who-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px}
+.who-card h3{font-size:20px;font-weight:700;margin-bottom:12px}
+.who-card.yes h3{color:var(--primary)}
+.who-card.no h3{color:var(--muted)}
+.who-card ul{list-style:none}
+.who-card li{font-size:15px;padding:6px 0;padding-left:24px;position:relative}
+.who-card.yes li::before{content:'';position:absolute;left:0;top:11px;width:14px;height:8px;border-left:2px solid var(--primary);border-bottom:2px solid var(--primary);transform:rotate(-45deg)}
+.who-card.no li::before{content:'';position:absolute;left:2px;top:10px;width:10px;height:10px;background:var(--faint);border-radius:2px;transform:rotate(45deg)}
+@media(max-width:768px){.who-grid{grid-template-columns:1fr}}
+.faq-list{display:flex;flex-direction:column;gap:12px}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden}
+.faq-q{width:100%;text-align:left;padding:20px 24px;font-size:16px;font-weight:600;display:flex;justify-content:space-between;align-items:center;color:var(--text)}
+.faq-q:hover{color:var(--primary)}
+.faq-a{padding:0 24px 20px;font-size:15px;color:var(--muted);display:none}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .faq-q{color:var(--primary)}
+.cta-section{text-align:center;padding:100px 0;background:linear-gradient(180deg,var(--bg),var(--surface))}
+.cta-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:48px;text-align:center}
+.cta-box h2{font-size:clamp(24px,4vw,32px);font-weight:700;margin-bottom:12px}
+.cta-box p{color:var(--muted);font-size:17px;margin-bottom:32px}
+.form{display:flex;flex-direction:column;gap:16px;max-width:480px;margin:0 auto}
+.form input,.form textarea{padding:12px 16px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);color:var(--text);font-size:15px}
+.form input:focus,.form textarea:focus{outline:none;border-color:var(--primary)}
+.form textarea{resize:vertical;min-height:80px}
+.form .btn{margin-top:8px}
+.footer{border-top:1px solid var(--border);padding:32px 0;text-align:center}
+.footer p{font-size:13px;color:var(--faint)}
+</style>
+</head>
+<body>
+
+<header class="header">
+<div class="container header-inner">
+<a href="#" class="logo">
+<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 8h20M6 16h14M6 24h8" stroke="#FF6B2C"/><path d="M22 20l4 4-4 4" stroke="#4FC3F7"/></svg>
+Deskryptor
+</a>
+<nav class="nav-links">
+<a href="#problem">Problem</a>
+<a href="#oferta">Oferta</a>
+<a href="#proces">Proces</a>
+<a href="#faq">FAQ</a>
+</nav>
+<a href="#kontakt" class="btn btn-primary">Bezpłatna wycena</a>
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+<div class="hero-badge">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+50 opisów Allegro w 72 godziny
+</div>
+<h1>Hurtowe opisy produktów <span>Allegro SEO</span> dla sprzedawców z branży hydraulicznej i budowlanej</h1>
+<p>Zastępujemy ręczne pisanie opisów automatyzacją AI. Dostarczamy gotowe, unikalne i zoptymalizowane pod wyszukiwarkę Allegro opisy w 24-72 godziny.</p>
+<div class="hero-cta">
+<a href="#kontakt" class="btn btn-primary">Zamów wycenę</a>
+<a href="#oferta" class="btn btn-outline">Zobacz cennik</a>
+</div>
+<div class="hero-stats">
+<div class="stat"><div class="stat-num">3 min</div><div class="stat-label">Czas generowania 1 opisu</div></div>
+<div class="stat"><div class="stat-num">50+</div><div class="stat-label">Opisów w jednej dostawie</div></div>
+<div class="stat"><div class="stat-num">24-72h</div><div class="stat-label">Czas realizacji</div></div>
+<div class="stat"><div class="stat-num">23 zł</div><div class="stat-label">Najniższa cena za opis</div></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="problem">
+<div class="container">
+<h2 class="section-title">Problem, który rozwiązujemy</h2>
+<p class="section-sub">Większość sprzedawców Allegro traci czas i pieniądze na opisy, które nie sprzedają.</p>
+<div class="problem-grid">
+<div class="problem-card">
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
+<h3>Ręczne pisanie jest wolne</h3>
+<p>Jeden opis zajmuje 15-30 minut. Przy 50 produktach to ponad 25 godzin pracy.</p>
+</div>
+<div class="problem-card">
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+<h3>Brak spójności SEO</h3>
+<p>Opisy są pisane przez różne osoby, w różnych stylach, bez strategii słów kluczowych.</p>
+</div>
+<div class="problem-card">
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+<h3>Wysokie koszty copywritera</h3>
+<p>Zlecenie 50 opisów u copywritera kosztuje 1500-3000 zł i trwa tydzień lub dłużej.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="oferta">
+<div class="container">
+<h2 class="section-title">Pakiety i cennik</h2>
+<p class="section-sub">Wybierz pakiet dopasowany do liczby produktów. Bez ukrytych kosztów.</p>
+<div class="offer-box">
+<div class="offer-grid">
+<div class="offer-item">
+<h3>Start</h3>
+<div class="price">299 zł</div>
+<div class="per">za 10 opisów</div>
+<ul>
+<li>10 unikalnych opisów</li>
+<li>Optymalizacja SEO</li>
+<li>Realizacja w 24h</li>
+<li>1 kategoria produktów</li>
+</ul>
+</div>
+<div class="offer-item">
+<h3>Pro</h3>
+<div class="price">549 zł</div>
+<div class="per">za 20 opisów</div>
+<ul>
+<li>20 unikalnych opisów</li>
+<li>Słowa kluczowe Allegro</li>
+<li>Realizacja w 48h</li>
+<li>2 kategorie produktów</li>
+</ul>
+</div>
+<div class="offer-item featured">
+<h3>Biznes</h3>
+<div class="price">1 199 zł</div>
+<div class="per">za 50 opisów</div>
+<ul>
+<li>50 unikalnych opisów</li>
+<li>Pełna optymalizacja SEO</li>
+<li>Realizacja w 72h</li>
+<li>Dowolne kategorie</li>
+<li>2 poprawki w cenie</li>
+</ul>
+</div>
+<div class="offer-item">
+<h3>Abonament</h3>
+<div class="price">999 zł/mc</div>
+<div class="per">za 50 opisów miesięcznie</div>
+<ul>
+<li>50 opisów co miesiąc</li>
+<li>Priorytetowa realizacja</li>
+<li>Dedykowane prompty AI</li>
+<li>Raport SEO</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="proces">
+<div class="container">
+<h2 class="section-title">Jak pracujemy</h2>
+<p class="section-sub">Od zlecenia do gotowych opisów w 4 krokach.</p>
+<div class="process-list">
+<div class="process-item">
+<div class="process-num">1</div>
+<div class="process-content">
+<h3>Zamówienie i brief</h3>
+<p>Wysyłasz listę produktów (Excel, CSV lub linki do Allegro). Określasz kategorie i ton komunikacji.</p>
+</div>
+</div>
+<div class="process-item">
+<div class="process-num">2</div>
+<div class="process-content">
+<h3>Generowanie AI + korekta</h3>
+<p>Używamy dedykowanych promptów AI dopasowanych do branży hydraulicznej i budowlanej. Każdy opis przechodzi korektę.</p>
+</div>
+</div>
+<div class="process-item">
+<div class="process-num">3</div>
+<div class="process-content">
+<h3>Dostawa gotowych opisów</h3>
+<p>Otrzymujesz plik Excel/CSV z gotowymi opisami, nagłówkami SEO i parametrami. Wgrywasz na Allegro.</p>
+</div>
+</div>
+<div class="process-item">
+<div class="process-num">4</div>
+<div class="process-content">
+<h3>Poprawki i optymalizacja</h3>
+<p>Pakiet Biznes i Abonament zawierają 2 rundy poprawek. Dostosowujemy opisy do wyników sprzedaży.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="dla-kogo">
+<div class="container">
+<h2 class="section-title">Dla kogo jest Deskryptor</h2>
+<p class="section-sub">Sprawdź, czy to usługa dla Ciebie.</p>
+<div class="who-grid">
+<div class="who-card yes">
+<h3>Idealny dla</h3>
+<ul>
+<li>Sprzedawców Allegro z branży hydraulicznej</li>
+<li>Firm budowlanych i instalacyjnych</li>
+<li>Sklepów z armaturą i pompami</li>
+<li>Sprzedawców z 20+ produktami</li>
+<li>Osób szukających oszczędności czasu i pieniędzy</li>
+</ul>
+</div>
+<div class="who-card no">
+<h3>Nie dla</h3>
+<ul>
+<li>Sklepów z modą i odzieżą</li>
+<li>Sprzedawców z mniej niż 10 produktami</li>
+<li>Firm szukających copywritera stałego</li>
+<li>Osób niekorzystających z Allegro</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="faq">
+<div class="container">
+<h2 class="section-title">Często zadawane pytania</h2>
+<div class="faq-list">
+<div class="faq-item">
+<button class="faq-q">Czy opisy są unikalne i nie skopiowane?<span>+</span></button>
+<div class="faq-a">Tak. Każdy opis jest generowany od zera na podstawie parametrów produktu. Nie kopiujemy treści z innych ofert Allegro ani z internetu.</div>
+</div>
+<div class="faq-item">
+<button class="faq-q">Czy opisy są tworzone przez AI?<span>+</span></button>
+<div class="faq-a">Tak, używamy AI do generowania pierwszej wersji opisu, a następnie każda treść przechodzi korektę i edycję przez człowieka. Dzięki temu opisy są unikalne, naturalne i profesjonalne.</div>
+</div>
+<div class="faq-item">
+<button class="faq-q">Jakie kategorie produktów obsługujecie?<span>+</span></button>
+<div class="faq-a">Specjalizujemy się w branży hydraulicznej, budowlanej i instalacyjnej: armatura, pompy, rury, narzędzia, materiały budowlane, instalacje CO i CWU.</div>
+</div>
+<div class="faq-item">
+<button class="faq-q">Czy możesz zamówić próbkę przed zakupem?<span>+</span></button>
+<div class="faq-a">Tak. Oferujemy 5 darmowych opisów próbnych dla nowych klientów. Skontaktuj się przez formularz poniżej.</div>
+</div>
+<div class="faq-item">
+<button class="faq-q">Jakie są metody płatności?<span>+</span></button>
+<div class="faq-a">Przelew bankowy lub BLIK. Faktura lub rachunek po ustaleniu. Abonament rozliczany miesięcznie.</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section cta-section" id="kontakt">
+<div class="container">
+<div class="cta-box">
+<h2>Gotowy na hurtowe opisy Allegro?</h2>
+<p>Wyślij zapytanie, a przygotuję spersonalizowaną wycenę w 24 godziny. Pierwsze 5 opisów za darmo.</p>
+<form class="form" action="mailto:kontakt@deskryptor.pl" method="post" enctype="text/plain" onsubmit="handleSubmit(event)">
+<input type="text" name="imie" placeholder="Imię i nazwisko" required>
+<input type="email" name="email" placeholder="Adres e-mail" required>
+<input type="text" name="sklep" placeholder="Nazwa sklepu Allegro (opcjonalnie)">
+<textarea name="wiadomosc" placeholder="Ile opisów potrzebujesz? Jakie kategorie produktów?" required></textarea>
+<button type="submit" class="btn btn-primary">Wyślij zapytanie</button>
+</form>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+<p>Deskryptor — Hurtowe opisy produktów Allegro SEO. © 2026. Wszystkie prawa zastrzeżone.</p>
+</div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(btn => {
+btn.addEventListener('click', () => {
+const item = btn.parentElement;
+const isOpen = item.classList.contains('open');
+document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+if (!isOpen) item.classList.add('open');
+});
+});
+
+function handleSubmit(e) {
+e.preventDefault();
+const form = e.target;
+const btn = form.querySelector('button');
+btn.textContent = 'Przekierowuję do poczty...';
+btn.style.background = '#437A22';
+setTimeout(() => {
+form.submit();
+}, 800);
+}
+</script>
+<script data-pplx-inline-edit>
+(function () {
+  if (window === window.top) return;
+
+  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://perplexity.localhost","http://localhost:1420","http://127.0.0.1:1420","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
+  const MAX_FONT_BYTES = 500 * 1024;
+  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
+  let scrollForwarding = false;
+  let scrollRaf = 0;
+  let trustedTopOrigin = null;
+
+  // Allow entries like "https://*.preview.i.perplexity.ai" — the wildcard
+  // matches a single DNS label (no dots), so "https://*.foo" cannot stretch
+  // across multiple labels.
+  function matchesAllowedOrigin(origin) {
+    if (!origin) return false;
+    for (const entry of allowedParentOrigins) {
+      if (!entry.includes("*")) {
+        if (entry === origin) return true;
+        continue;
+      }
+      const pattern = new RegExp(
+        "^" +
+          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^.]+") +
+          "$",
+      );
+      if (pattern.test(origin)) return true;
+    }
+    return false;
+  }
+
+  // Trust decision: when the sender is same-origin-visible (event.origin is a
+  // real origin like https://www.perplexity.ai) we trust event.origin directly.
+  // When event.origin is "null" (opaque broker srcdoc), we fall back to the
+  // broker's stamped `parentOrigin` to identify the top window. The fallback
+  // is claim-only — we rely on the browser's native `targetOrigin` enforcement
+  // on the response path (see postToTrustedTop) to ensure replies can't be
+  // delivered to anyone but the actual top window of that claimed origin.
+  function getTrustedParentOrigin(event) {
+    const forwardedParentOrigin =
+      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
+    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
+    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
+  }
+
+  // All responses go to window.top with targetOrigin = the allowlisted origin.
+  // An attacker that iframes us inside their own null-origin broker can claim
+  // any parentOrigin they like, but the browser will drop the reply whenever
+  // the real top's origin doesn't match — so the screenshot never leaves.
+  function postToTrustedTop(message) {
+    if (!trustedTopOrigin) return;
+    try {
+      window.top.postMessage(message, trustedTopOrigin);
+    } catch (_error) {}
+  }
+
+  function inlineAll(original, clone) {
+    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
+
+    try {
+      const computedStyle = getComputedStyle(original);
+      // cssText on a computed style is the serialized declaration in modern
+      // Chromium/Safari — a single read beats enumerating ~400 longhand
+      // properties. Firefox returns "" here, so we fall back on empty.
+      const serialized = computedStyle.cssText;
+      if (serialized) {
+        clone.style.cssText = serialized;
+      } else {
+        const parts = new Array(computedStyle.length);
+        for (let index = 0; index < computedStyle.length; index += 1) {
+          const property = computedStyle[index];
+          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
+        }
+        clone.style.cssText = parts.join("");
+      }
+    } catch (_error) {}
+
+    const originalChildren = original.children;
+    const clonedChildren = clone.children;
+    for (
+      let index = 0;
+      index < originalChildren.length && index < clonedChildren.length;
+      index += 1
+    ) {
+      inlineAll(originalChildren[index], clonedChildren[index]);
+    }
+  }
+
+  function extractFontUrl(srcValue) {
+    const matches = [
+      ...srcValue.matchAll(
+        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
+      ),
+    ];
+    if (matches.length === 0) return null;
+    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
+    if (woff2) return woff2[1];
+    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
+    if (woff) return woff[1];
+    return matches[0][1];
+  }
+
+  // Cache resolved font URL -> data URI across captures. Fonts on a page
+  // essentially never change, and a batch run emits multiple captures back to
+  // back — without this we'd refetch + re-base64 every time.
+  const fontDataUriCache = new Map();
+  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
+
+  async function fetchAsDataUri(url) {
+    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
+    let dataUri = null;
+    try {
+      const response = await fetch(url, { mode: "cors", credentials: "omit" });
+      if (response.ok) {
+        const blob = await response.blob();
+        if (blob.size <= MAX_FONT_BYTES) {
+          dataUri = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () =>
+              resolve(typeof reader.result === "string" ? reader.result : null);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+          });
+        }
+      }
+    } catch (_error) {
+      dataUri = null;
+    }
+    fontDataUriCache.set(url, dataUri);
+    return dataUri;
+  }
+
+  function collectFontFaceRuleTexts() {
+    const rules = [];
+    for (const sheet of document.styleSheets) {
+      let cssRules;
+      try {
+        cssRules = sheet.cssRules;
+      } catch (_error) {
+        continue;
+      }
+      if (!cssRules) continue;
+      for (const rule of cssRules) {
+        const cssText = rule.cssText || "";
+        if (cssText.startsWith("@font-face")) rules.push(cssText);
+      }
+    }
+    return rules;
+  }
+
+  async function buildInlinedFontCss() {
+    const ruleTexts = collectFontFaceRuleTexts();
+    if (ruleTexts.length === 0) return null;
+
+    const resolved = ruleTexts.map((cssText) => {
+      if (!SRC_DECLARATION_RE.test(cssText)) return null;
+      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
+      if (!srcMatch) return null;
+      const url = extractFontUrl(srcMatch[1]);
+      if (!url) return null;
+      try {
+        return { cssText, url: new URL(url, document.baseURI).href };
+      } catch (_error) {
+        return null;
+      }
+    });
+
+    const dataUris = await Promise.all(
+      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
+    );
+
+    const inlined = [];
+    let totalBytes = 0;
+    for (let index = 0; index < resolved.length; index += 1) {
+      const entry = resolved[index];
+      const dataUri = dataUris[index];
+      if (!entry || !dataUri) continue;
+      const approxBytes = dataUri.length * 0.75;
+      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
+      totalBytes += approxBytes;
+      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
+    }
+    return inlined.length > 0 ? inlined.join("\n") : null;
+  }
+
+  function stripExternal(clone) {
+    const images = clone.querySelectorAll("img");
+    for (let index = 0; index < images.length; index += 1) {
+      const src = images[index].getAttribute("src");
+      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
+    }
+
+    const elements = clone.querySelectorAll("*");
+    for (let index = 0; index < elements.length; index += 1) {
+      const style = elements[index].style.cssText;
+      if (style && style.includes("url(")) {
+        elements[index].style.cssText = style.replace(
+          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+          "none",
+        );
+      }
+    }
+  }
+
+  function emitScroll() {
+    scrollRaf = 0;
+    if (!scrollForwarding) return;
+    postToTrustedTop({
+      type: "INLINE_EDIT_SCROLL",
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollForwarding || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(emitScroll);
+    },
+    { passive: true, capture: true },
+  );
+
+  async function handleCaptureRequest(event) {
+    const requestId = event.data.requestId;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    function postResult(dataUrl) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_RESULT",
+        requestId,
+        dataUrl,
+        scrollX,
+        scrollY,
+      });
+    }
+
+    try {
+      // Wait for any pending web fonts to resolve so both inline metrics and
+      // the @font-face inlining below see the same loaded faces.
+      if (document.fonts && document.fonts.ready) {
+        try {
+          await document.fonts.ready;
+        } catch (_error) {}
+      }
+
+      const clone = document.documentElement.cloneNode(true);
+      inlineAll(document.documentElement, clone);
+
+      const removedNodes = clone.querySelectorAll("script,link[rel=\"stylesheet\"],style");
+      for (let index = 0; index < removedNodes.length; index += 1) {
+        removedNodes[index].remove();
+      }
+
+      stripExternal(clone);
+
+      // Re-embed web fonts as data-URI @font-face rules so the SVG rasterizer
+      // can resolve them — external font URLs aren't fetched during
+      // foreignObject rendering, which would otherwise force a fallback face
+      // and change text metrics.
+      const inlinedFontCss = await buildInlinedFontCss();
+      if (inlinedFontCss) {
+        const styleEl = document.createElement("style");
+        styleEl.textContent = inlinedFontCss;
+        const head = clone.querySelector("head");
+        if (head) head.appendChild(styleEl);
+        else clone.insertBefore(styleEl, clone.firstChild);
+      }
+
+      const html = new XMLSerializer().serializeToString(clone);
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+        '<foreignObject width="100%" height="100%">' +
+        `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;overflow:hidden">` +
+        `<div style="position:relative;left:-${scrollX}px;top:-${scrollY}px">` +
+        html +
+        "</div></div></foreignObject></svg>";
+      const svgUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+      const image = new Image();
+      image.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+        postResult(canvas.toDataURL("image/png"));
+      };
+      image.onerror = function () {
+        postResult(null);
+      };
+      image.src = svgUrl;
+    } catch (_error) {
+      postResult(null);
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (!event.data) return;
+    // Only accept messages from the direct parent frame. Blocks sibling /
+    // unrelated-window postMessage senders that could otherwise reach us.
+    if (event.source !== window.parent) return;
+
+    const trustedParentOrigin = getTrustedParentOrigin(event);
+    if (!trustedParentOrigin) return;
+    trustedTopOrigin = trustedParentOrigin;
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_START") {
+      scrollForwarding = true;
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_STOP") {
+      scrollForwarding = false;
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = 0;
+      return;
+    }
+
+    if (event.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
+
+    handleCaptureRequest(event);
+  });
+})();
+
+
+</script></body>
+</html>
